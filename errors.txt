@@ -1,0 +1,14 @@
+1- ModuleNotFoundError: No module named 'flask_migrate'
+    - Se soluciona corriendo `pip install flask_migrate`
+2- RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+    - Se soluciona creando el archivo .env y colocando en la variable SQLALCHEMY_DATABASE_URI la conexion a la base de datos.
+3- jinja2.exceptions.TemplateNotFound: index.html
+    - Se soluciona cambiando el nombre del archivo de inicio.html por index.html
+4- ERROR in app: Exception on /users [POST]
+    - Se soluciona agregando POST dentro de los metodos permitidos para el endpoint /users
+5- NameError: name 'username' is not defined
+    - Se cambia el nombre de la variable nombre por username
+6- "GET /index HTTP/1.1" 404
+    - Se llama a un endpoint que no esta definido, se cambia por / en base.html
+7- jinja2.exceptions.TemplateNotFound: base_template.html
+    - Se soluciona cambiando de base_template.html por base.html en el archivo about.html
