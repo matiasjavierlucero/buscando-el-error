@@ -24,15 +24,19 @@ def index():
 def about():
     return render_template('about.html')
 
-@app.route('/users', methods=['GET'])
+@app.route('/users', methods=['GET', 'POST'])
 def users():
-    if request.method=='POST':
-        nombre = request.form.get('username')
-        email = request.form.get('email')
-        nuevo_usuario = User(username=username, email=email)
-        db.session.add(nuevo_usuario)
+    try:
+        if request.method=='POST':
+            username = request.form.get('username')
+            email = request.form.get('email')
+            nuevo_usuario = User(username=username, email=email)
+            db.session.add(nuevo_usuario)
+            db.session.commit()
+    except:
+        return render_template('fail.html', email=email)
     usuarios=User.query.all()
-    return render_template('users.html', users=[])
+    return render_template('users.html', users=usuarios)
 
 if __name__ == '__main__':
     app.run(debug=True)

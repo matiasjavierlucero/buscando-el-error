@@ -1,0 +1,26 @@
+Error 1: ModuleNotFoundError: No module named 'flask_migrate' al correr flask db init
+ - Corregido instalando Flask-Migrate
+
+Error 2: jinja2.exceptions.TemplateNotFound: index.html
+ - Corregido reemplazando index.html con inicio.html
+
+Error 3: jinja2.exceptions.TemplateNotFound: base_template.html
+ - Corregido reemplazando base_template.html con base.html en about.html
+
+Error 4: Al navegar a "inicio" redirige a /index y la ruta no existe
+ - Se reemplaza con / al darle a inicio
+
+Error 5: al intentar generar un usuario, me arroja "POST /users HTTP/1.1" 405 - indica que el metodo no está permitido
+ - Se corrige agregando POST al endpoint /users
+
+Error 6: NameError: name 'username' is not defined
+ - Se corrige reemplazando 'nombre' por 'username' en la linea 30 de app.py
+
+Error 7: No se guarda el usuario en base de datos
+ - Faltaba db.session.commit()
+
+Error 8: No muestra los usuarios
+ - lista de usuarios no se pasaba al template antes de cargar la vista
+
+Error 9: No carga correctamente el listado de usuarios
+ - Se reemplaza en la vista users.html los parametros por {{user.username}} y {{user.email}}
