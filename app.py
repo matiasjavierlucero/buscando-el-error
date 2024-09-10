@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from dotenv import load_dotenv
@@ -24,9 +24,15 @@ def index():
 def about():
     return render_template('about.html')
 
-@app.route('/users')
+@app.route('/users', methods=['GET'])
 def users():
-    return render_template('users.html', users=users)
+    if request.method=='POST':
+        nombre = request.form.get('username')
+        email = request.form.get('email')
+        nuevo_usuario = User(username=username, email=email)
+        db.session.add(nuevo_usuario)
+    usuarios=User.query.all()
+    return render_template('users.html', users=[])
 
 if __name__ == '__main__':
     app.run(debug=True)
