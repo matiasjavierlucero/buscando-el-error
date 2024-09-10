@@ -8,6 +8,7 @@
     2- Activar el entorno e instalar el requirementes.txt
     3- Activar XAMPP
     4- Crear una db para correr las migraciones
-    5- HACER QUE TODO FUNCIONE
-    6- Crear un archivo txt donde vayas enumerando los errores encontrados
+    5- Guiarse de .env-dist para obtener que variables son obligatorias
+    6- HACER QUE TODO FUNCIONE 
+    7- Crear un archivo txt donde vayas enumerando los errores encontrados
 
