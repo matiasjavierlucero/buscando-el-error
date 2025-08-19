@@ -11,10 +11,9 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://usuario@host:6000/la_base"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
+db = SQLalchemy(app)
 migrate = Migrate(app, db)
 
-from models import *
 
 @app.route('/')
 def index():
